@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1; minimum-scale=1; user-scalable=no;">
+<title>Red or Blue？</title>
+
+<link href="css/game.css" rel="stylesheet" type="text/css">
+<script src="js/jquery.js"></script>
+<script src="js/game.js"></script>
+
+</head>
+
+<body>
+<div class="wrapper">
+	<div class="splash">
+        <img src="images/eyes.png" alt="logo"/>
+    	<h1><span class="green">Red</span> OR <span class="red">Green</span> ?</h1>
+    	<p><a href="javascript:void(0)" class="button">GO</a></p>
+    </div>
+    <div class="howto" style="display: none;">
+    	<h1>How to Play?</h1>
+        <p>Look at the words and guess the color！<br></p>
+        <p>Now,Let's have a test!</p>
+        <h2>Rules</h2>
+        <p><strong>Select the font color you see!</strong></p>
+    	<p><a href="javascript:void(0)" class="button">Start the game!</a></p>
+    </div>
+
+    <div class="bomDIv"></div>
+
+    <!--问题提示板begin-->
+	<ul class="hud">
+        <li class="timeCount"></li>
+        <li class="totalQuest" style="display: none;">Question 1 / 20</li>
+    </ul>
+    <!--问题提示板end-->
+
+    <div class="all_quest">
+        <!--第一题begin-->
+        <div class="quest1" style="display: none;">
+        	<p class="sequence">What is the color of the word?</p>
+            <h1 class="green">Orange</h1>
+            <div class="answer">
+            	<ul>
+                    <li><a href="javascript:void(0)" class="option_a" data-verify="cuo">Red</a></li>
+                    <li><a href="javascript:void(0)" class="option_b" data-verify="dui">Green</a></li>
+                    <li><a href="javascript:void(0)" class="option_c" data-verify="cuo">Orange</a></li>
+                    <li><a href="javascript:void(0)" class="option_d" data-verify="cuo">Blue</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--第一题end-->
+
+        <!--第二题begin-->
+        <div class="quest2" style="display: none;">
+            <p class="sequence">What is the color of the word?</p>
+            <h1 class="red">Black</h1>
+            <div class="answer">
+                <ul>
+                    <li><a href="javascript:void(0)" class="option_a" data-verify="cuo">Green</a></li>
+                    <li><a href="javascript:void(0)" class="option_b" data-verify="cuo">Black</a></li>
+                    <li><a href="javascript:void(0)" class="option_c" data-verify="dui">Red</a></li>
+                    <li><a href="javascript:void(0)" class="option_d" data-verify="cuo">Yellow</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--第二题end-->
+
+        <!--第三题begin-->
+        <div class="quest3" style="display: none;">
+            <p class="sequence">What is the color of the word?</p>
+            <h1 class="yellow">yellow</h1>
+            <div class="answer">
+                <ul>
+                    <li><a href="javascript:void(0)" class="option_a" data-verify="cuo">green</a></li>
+                    <li><a href="javascript:void(0)" class="option_b" data-verify="cuo">Black</a></li>
+                    <li><a href="javascript:void(0)" class="option_c" data-verify="cuo">Blue</a></li>
+                    <li><a href="javascript:void(0)" class="option_d" data-verify="dui">Yellow</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--第三题end-->
+
+        <!--第四题begin-->
+        <div class="quest4" style="display: none;">
+            <p class="sequence">What is the color of the word?</p>
+            <h1 class="blue">Red</h1>
+            <div class="answer">
+                <ul>
+                    <li><a href="javascript:void(0)" class="option_a" data-verify="cuo">Yellow</a></li>
+                    <li><a href="javascript:void(0)" class="option_b" data-verify="cuo">Orange</a></li>
+                    <li><a href="javascript:void(0)" class="option_c" data-verify="cuo">Red</a></li>
+                    <li><a href="javascript:void(0)" class="option_d" data-verify="dui">Blue</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--第四题 end-->
+
+        <!--第5题begin-->
+        <div class="quest5" style="display: none;">
+            <p class="sequence">What is the color of the word?</p>
+            <h1 class="black">Black</h1>
+            <div class="answer">
+                <ul>
+                    <li><a href="javascript:void(0)" class="option_a" data-verify="cuo">Green</a></li>
+                    <li><a href="javascript:void(0)" class="option_b" data-verify="cuo">Blue</a></li>
+                    <li><a href="javascript:void(0)" class="option_c" data-verify="cuo">Orange</a></li>
+                    <li><a href="javascript:void(0)" class="option_d" data-verify="dui">Black</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--第5题end-->
+
+        <!--第6题begin-->
+        <div class="quest6" style="display: none;">
+            <p class="sequence">What is the color of the word?</p>
+            <h1 class="yellow">Green</h1>
+            <div class="answer">
+                <ul>
+                    <li><a href="javascript:void(0)" class="option_a" data-verify="dui">Yellow</a></li>
+                    <li><a href="javascript:void(0)" class="option_b" data-verify="cuo">Green</a></li>
+                    <li><a href="javascript:void(0)" class="option_c" data-verify="cuo">Blue</a></li>
+                    <li><a href="javascript:void(0)" class="option_d" data-verify="cuo">Red</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--第6题end-->
+
+        <!--第7题begin-->
+        <div class="quest7" style="display: none;">
+            <p class="sequence">What is the color of the word?</p>
+            <h1 class="orange">Yellow</h1>
+            <div class="answer">
+                <ul>
+                    <li><a href="javascript:void(0)" class="option_a" data-verify="cuo">Yellow</a></li>
+                    <li><a href="javascript:void(0)" class="option_b" data-verify="cuo">Black</a></li>
+                    <li><a href="javascript:void(0)" class="option_c" data-verify="dui">Orange</a></li>
+                    <li><a href="javascript:void(0)" class="option_d" data-verify="cuo">Green</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--第7题end-->
+
+        <!--第8题begin-->
+        <div class="quest8" style="display: none;">
+            <p class="sequence">What is the color of the word?</p>
+            <h1 class="blue">Blue</h1>
+            <div class="answer">
+                <ul>
+                    <li><a href="javascript:void(0)" class="option_a" data-verify="cuo">Black</a></li>
+                    <li><a href="javascript:void(0)" class="option_b" data-verify="dui">Blue</a></li>
+                    <li><a href="javascript:void(0)" class="option_c" data-verify="cuo">Yellow</a></li>
+                    <li><a href="javascript:void(0)" class="option_d" data-verify="cuo">Red</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--第8题end-->
+
+        <!--第9题begin-->
+        <div class="quest9" style="display: none;">
+            <p class="sequence">What is the color of the word?</p>
+            <h1 class="yellow">Green</h1>
+            <div class="answer">
+                <ul>
+                    <li><a href="javascript:void(0)" class="option_a" data-verify="cuo">Green</a></li>
+                    <li><a href="javascript:void(0)" class="option_b" data-verify="dui">Yellow</a></li>
+                    <li><a href="javascript:void(0)" class="option_c" data-verify="cuo">Blue</a></li>
+                    <li><a href="javascript:void(0)" class="option_d" data-verify="cuo">Black</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--第9题end-->
+
+        <!--第10题begin-->
+        <div class="quest10" style="display: none;">
+            <p class="sequence">What is the color of the word?</p>
+            <h1 class="orange">Red</h1>
+            <div class="answer">
+                <ul>
+                    <li><a href="javascript:void(0)" class="option_a" data-verify="cuo">Blue</a></li>
+                    <li><a href="javascript:void(0)" class="option_b" data-verify="cuo">Red</a></li>
+                    <li><a href="javascript:void(0)" class="option_c" data-verify="dui">Orange</a></li>
+                    <li><a href="javascript:void(0)" class="option_d" data-verify="cuo">Green</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--第10题end-->
+
+        <!--第11题begin-->
+        <div class="quest11" style="display: none;">
+            <p class="sequence">What is the color of the word?</p>
+            <h1 class="red">Orange</h1>
+            <div class="answer">
+                <ul>
+                    <li><a href="javascript:void(0)" class="option_a" data-verify="cuo">Black</a></li>
+                    <li><a href="javascript:void(0)" class="option_b" data-verify="cuo">Green</a></li>
+                    <li><a href="javascript:void(0)" class="option_c" data-verify="cuo">Blue</a></li>
+                    <li><a href="javascript:void(0)" class="option_d" data-verify="dui">Red</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--第11题end-->
+
+        <!--第12题begin-->
+        <div class="quest12" style="display: none;">
+            <p class="sequence">What is the color of the word?</p>
+            <h1 class="orange">Black</h1>
+            <div class="answer">
+                <ul>
+                    <li><a href="javascript:void(0)" class="option_a" data-verify="dui">Orange</a></li>
+                    <li><a href="javascript:void(0)" class="option_b" data-verify="cuo">Green</a></li>
+                    <li><a href="javascript:void(0)" class="option_c" data-verify="cuo">Black</a></li>
+                    <li><a href="javascript:void(0)" class="option_d" data-verify="cuo">Blue</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--第12题end-->
+
+        <!--第13题begin-->
+        <div class="quest13" style="display: none;">
+            <p class="sequence">What is the color of the word?</p>
+            <h1 class="yellow">Yellow</h1>
+            <div class="answer">
+                <ul>
+                    <li><a href="javascript:void(0)" class="option_a" data-verify="cuo">Orange</a></li>
+                    <li><a href="javascript:void(0)" class="option_b" data-verify="cuo">Blue</a></li>
+                    <li><a href="javascript:void(0)" class="option_c" data-verify="cuo">Green</a></li>
+                    <li><a href="javascript:void(0)" class="option_d" data-verify="dui">Yellow</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--第13题end-->
+
+        <!--第14题begin-->
+        <div class="quest14" style="display: none;">
+            <p class="sequence">What is the color of the word?</p>
+            <h1 class="black">Blue</h1>
+            <div class="answer">
+                <ul>
+                    <li><a href="javascript:void(0)" class="option_a" data-verify="cuo">Green</a></li>
+                    <li><a href="javascript:void(0)" class="option_b" data-verify="dui">Black</a></li>
+                    <li><a href="javascript:void(0)" class="option_c" data-verify="cuo">Blue</a></li>
+                    <li><a href="javascript:void(0)" class="option_d" data-verify="cuo">Red</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--第14题end-->
+
+        <!--第15题begin-->
+        <div class="quest15" style="display: none;">
+            <p class="sequence">What is the color of the word?</p>
+            <h1 class="brown">Green</h1>
+            <div class="answer">
+                <ul>
+                    <li><a href="javascript:void(0)" class="option_a" data-verify="cuo">Green</a></li>
+                    <li><a href="javascript:void(0)" class="option_b" data-verify="cuo">Orange</a></li>
+                    <li><a href="javascript:void(0)" class="option_c" data-verify="cuo">Yellow</a></li>
+                    <li><a href="javascript:void(0)" class="option_d" data-verify="dui">Brown</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--第15题end-->
+
+        <!--第16题begin-->
+        <div class="quest16" style="display: none;">
+            <p class="sequence">What is the color of the word?</p>
+            <h1 class="brown">Brown</h1>
+            <div class="answer">
+                <ul>
+                    <li><a href="javascript:void(0)" class="option_a" data-verify="cuo">Blue</a></li>
+                    <li><a href="javascript:void(0)" class="option_b" data-verify="cuo">Green</a></li>
+                    <li><a href="javascript:void(0)" class="option_c" data-verify="dui">Brown</a></li>
+                    <li><a href="javascript:void(0)" class="option_d" data-verify="cuo">Yellow</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--第16题end-->
+
+        <!--第17题begin-->
+        <div class="quest17" style="display: none;">
+            <p class="sequence">What is the color of the word?</p>
+            <h1 class="green">Red</h1>
+            <div class="answer">
+                <ul>
+                    <li><a href="javascript:void(0)" class="option_a" data-verify="dui">Green</a></li>
+                    <li><a href="javascript:void(0)" class="option_b" data-verify="cuo">Red</a></li>
+                    <li><a href="javascript:void(0)" class="option_c" data-verify="cuo">Black</a></li>
+                    <li><a href="javascript:void(0)" class="option_d" data-verify="cuo">Orange</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--第17题end-->
+
+        <!--第18题begin-->
+        <div class="quest18" style="display: none;">
+            <p class="sequence">What is the color of the word?</p>
+            <h1 class="brown">Orange</h1>
+            <div class="answer">
+                <ul>
+                    <li><a href="javascript:void(0)" class="option_a" data-verify="dui">Brown</a></li>
+                    <li><a href="javascript:void(0)" class="option_b" data-verify="cuo">Orange</a></li>
+                    <li><a href="javascript:void(0)" class="option_c" data-verify="cuo">Yellow</a></li>
+                    <li><a href="javascript:void(0)" class="option_d" data-verify="cuo">Red</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--第18题end-->
+
+        <!--第19题begin-->
+        <div class="quest19" style="display: none;">
+            <p class="sequence">What is the color of the word?</p>
+            <h1 class="blue">Green</h1>
+            <div class="answer">
+                <ul>
+                    <li><a href="javascript:void(0)" class="option_a" data-verify="cuo">Black</a></li>
+                    <li><a href="javascript:void(0)" class="option_b" data-verify="cuo">Green</a></li>
+                    <li><a href="javascript:void(0)" class="option_c" data-verify="cuo">Red</a></li>
+                    <li><a href="javascript:void(0)" class="option_d" data-verify="dui">Blue</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--第19题end-->
+
+        <!--第20题begin-->
+        <div class="quest20" style="display: none;">
+            <p class="sequence">What is the color of the word?</p>
+            <h1 class="black">Brown</h1>
+            <div class="answer">
+                <ul>
+                    <li><a href="javascript:void(0)" class="option_a" data-verify="cuo">Green</a></li>
+                    <li><a href="javascript:void(0)" class="option_b" data-verify="cuo">Red</a></li>
+                    <li><a href="javascript:void(0)" class="option_c" data-verify="dui">Black</a></li>
+                    <li><a href="javascript:void(0)" class="option_d" data-verify="cuo">Blue</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--第20题end-->
+        
+        <div class="result" style="display: none;">
+        	<h1>Your Scores</h1>
+            <p>Your Answers<span class="score">0</span></p>
+            <div class="fb_plugin">
+            <p><br><br><br></p>
+            <p>
+                <a href="javascript:void(0)" class="button retry">Play Again</a>
+            </div>
+        </div>
+    </div>
+    <div class="hint">
+        <ul>
+            <li class="tick" style="display: none;">Yes!</li>
+            <li class="cross" style="display: none;">No!</li>
+        </ul>
+    </div>
+
+</div>
+</body>
+</html>
